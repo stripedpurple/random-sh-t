@@ -33,7 +33,7 @@
 })();
 
 var disable = function(time, apikey, cb) {
-    fetch(`http://pi.hole/admin/api.php?disable=${time}&auth=${apikey}`)
+    fetch(`https://pi.hole/admin/api.php?disable=${time}&auth=${apikey}`)
         .then(res => {
             return res;
         }).catch(err => console.error(err));
