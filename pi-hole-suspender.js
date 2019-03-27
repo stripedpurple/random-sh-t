@@ -1,4 +1,4 @@
-(function () {
+window.onload = function () {
     var modal = document.createElement('div');
     modal.id = 'pihole-modal';
     modal.style.cssText = 
@@ -29,7 +29,7 @@
     document.getElementById('pihole-form').addEventListener('submit', function(e){
         e.preventDefault();
     });
-})();
+}
 
 var disable = function(time, apikey, cb) {
     fetch(`http://pi.hole/admin/api.php?disable=${time}&auth=${apikey}`)
@@ -42,3 +42,4 @@ var disable = function(time, apikey, cb) {
 var cleanup = function(){
     window.close();
 }
+
