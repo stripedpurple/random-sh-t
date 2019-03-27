@@ -1,4 +1,4 @@
-window.onload = function () {
+(function () {
     document.body.style.backgroundColor = 'red';
     var modal = document.createElement('div');
 
@@ -21,17 +21,16 @@ window.onload = function () {
     document.getElementById('pihole-form').addEventListener('submit', function(e){
         e.preventDefault();
     });
+})();
 
-    var disable = function(time, apikey, cb) {
-        fetch(`http://pi.hole/admin/api.php?disable=${time}&auth=${apikey}`)
-            .then(res => {
-                return res;
-            }).catch(err => console.error(err));
-        cb();
-    }
-    
-    var cleanup = function(){
-        window.close();
-    }
-    
+var disable = function(time, apikey, cb) {
+    fetch(`http://pi.hole/admin/api.php?disable=${time}&auth=${apikey}`)
+        .then(res => {
+            return res;
+        }).catch(err => console.error(err));
+    cb();
+}
+
+var cleanup = function(){
+    window.close();
 }
