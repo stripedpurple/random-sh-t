@@ -1,15 +1,6 @@
 window.onload = function () {
     var modal = document.createElement('div');
-    modal.id = 'pihole-modal';
-    modal.style.cssText = 
-        "background: rgba(0,0,0,0.5); \
-        position: fixed; \
-        width: 100%; \
-        height: 100%; \
-        top: 0; \
-        left: 0; \
-        z-index: 10000;"
-    ;
+
     modal.innerHTML = '<div style="background: #fefefe; padding: 2rem 1.5rem; margin: 45% auto auto auto;"> <form action="#" id="pihole-form"> <div style="display: inline-block"> <label for="hour">Hours</label><br> <input type="number" name="hour"> </div> <div style="display: inline-block"> <label for="min">Minutes</label><br> <input type="number" name="min"> </div> <div style="display: inline-block"> <label for="sec">Seconds</label><br> <input type="number" name="sec"> </div> <div> <input type="button" value="suspend" id="pihole-submit"> </div> </form> </div>';
     document.body.appendChild(modal)
 
@@ -42,4 +33,3 @@ var disable = function(time, apikey, cb) {
 var cleanup = function(){
     window.close();
 }
-
