@@ -1,4 +1,3 @@
-
 (function () {
     var modal = document.createElement('div');
     modal.id = 'pihole-modal';
@@ -33,7 +32,7 @@
 })();
 
 var disable = function(time, apikey, cb) {
-    fetch(`https://pi.hole/admin/api.php?disable=${time}&auth=${apikey}`)
+    fetch(`http://pi.hole/admin/api.php?disable=${time}&auth=${apikey}`)
         .then(res => {
             return res;
         }).catch(err => console.error(err));
@@ -41,6 +40,5 @@ var disable = function(time, apikey, cb) {
 }
 
 var cleanup = function(){
-    document.getElementById('pihole').parentNode.removeChild(this);
-    document.getElementById('pihole-modal').parentNode.removeChild(this);
+    window.close();
 }
